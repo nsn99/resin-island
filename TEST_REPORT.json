@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-13",
+  "portable": {
+    "built": true,
+    "strict_typescript_check": "passed",
+    "core_checks_passed": 7,
+    "browser": "Chromium 144 / Linux Xvfb / SwiftShader",
+    "desktop_results": "tests/desktop-results.json",
+    "mobile_emulation_results": "tests/mobile-results.json",
+    "no_external_requests": true
+  },
+  "react_r3f_source": {
+    "syntax_transpilation": "17 TS/TSX source files passed",
+    "dependency_install": "not completed: npm network unavailable",
+    "dependency_aware_types": "not run",
+    "vite_production_build": "not run",
+    "runtime_visual_test": "not run"
+  },
+  "performance": {
+    "desktop_60_fps": "not verified on physical GPU",
+    "mobile_30_fps": "not verified on physical device",
+    "software_rendering_full_size_high_fps_observed": "approximately 2-3"
+  },
+  "visual_fidelity": "stylized working prototype; not a photorealistic match to the reference",
+  "public_deployment": "not created"
+}

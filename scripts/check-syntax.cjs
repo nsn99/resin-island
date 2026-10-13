@@ -1,0 +1,5 @@
+const fs=require('node:fs'),path=require('node:path');
+const ts=require(process.env.TYPESCRIPT_PATH||'typescript');
+const root=path.resolve(__dirname,'..');const errors=[];let count=0;
+function visit(dir){for(const name of fs.readdirSync(dir)){const file=path.join(dir,name);if(fs.statSync(file).isDirectory())visit(file);else if(/\.tsx?$/.test(name)){count++;const result=ts.transpileModule(fs.readFileSync(file,'utf8'),{fileName:file,reportDiagnostics:true,compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.ESNext,jsx:ts.JsxEmit.ReactJSX,verbatimModuleSyntax:true}});for(const d of result.diagnostics||[])if(d.category===ts.DiagnosticCategory.Error)errors.push({file:path.relative(root,file),message:ts.flattenDiagnosticMessageText(d.messageText,' ')});}}}
+visit(path.join(root,'src'));const result={scope:'Syntax transpilation only; not dependency-aware type checking or a Vite build',files:count,errors,passed:errors.length===0};fs.writeFileSync(path.join(root,'tests/syntax-results.json'),JSON.stringify(result,null,2));console.log(JSON.stringify(result,null,2));if(errors.length)process.exit(1);

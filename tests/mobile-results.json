@@ -1,0 +1,61 @@
+{
+  "edition": "portable WebGL2",
+  "mobile_emulation": true,
+  "checks": {
+    "initialization": true,
+    "gpu_heightfield": true,
+    "panel_initially_hidden": true,
+    "panel_touch_toggle": true,
+    "no_horizontal_overflow": true,
+    "webgl_no_error": true,
+    "no_runtime_errors": true,
+    "no_network_requests": true
+  },
+  "errors": [],
+  "requests": [],
+  "initial": {
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "gpuSimulation": true,
+    "quality": "Lite",
+    "resolution": [
+      273,
+      591
+    ],
+    "triangles": 96756,
+    "time": 0.3508999999999999,
+    "jelly": [
+      0,
+      0
+    ],
+    "camera": [
+      0.7,
+      0.92,
+      16.8
+    ],
+    "waveMaximum": 0,
+    "readError": 0
+  },
+  "final": {
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "gpuSimulation": true,
+    "quality": "Lite",
+    "resolution": [
+      273,
+      591
+    ],
+    "triangles": 96756,
+    "time": 1.2677,
+    "jelly": [
+      0,
+      0
+    ],
+    "camera": [
+      0.7,
+      0.92,
+      16.8
+    ],
+    "waveMaximum": 0.0142059326171875,
+    "readError": 0
+  },
+  "passed": true
+}

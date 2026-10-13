@@ -1,0 +1,6 @@
+{
+  "scope": "Syntax transpilation only; not dependency-aware type checking or a Vite build",
+  "files": 17,
+  "errors": [],
+  "passed": true
+}

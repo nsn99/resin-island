@@ -1,0 +1,33 @@
+{
+  "name": "isole-resin-island",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "check": "tsc --noEmit",
+    "build:portable": "node scripts/build-portable.cjs",
+    "test:core": "node scripts/test-core.cjs"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.0.0",
+    "@react-three/fiber": "^9.0.0",
+    "@react-three/postprocessing": "^3.0.0",
+    "leva": "^0.10.0",
+    "postprocessing": "^6.37.8",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "three": "0.180.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@types/three": "^0.180.0",
+    "@vitejs/plugin-react": "^4.5.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.6"
+  },
+  "engines": { "node": ">=20.19.0" }
+}

@@ -1,0 +1,92 @@
+{
+  "edition": "portable WebGL2",
+  "mobile_emulation": false,
+  "checks": {
+    "initialization": true,
+    "gpu_heightfield": true,
+    "wave_slider": true,
+    "color_picker": true,
+    "splash_changes_gpu_height": true,
+    "pointer_jelly": true,
+    "drag_orbits": true,
+    "wheel_zooms": true,
+    "preset_camera": true,
+    "pause_stops_time": true,
+    "about_opens": true,
+    "reset_restores_controls": true,
+    "lite_reduces_resolution": true,
+    "png_export": true,
+    "webgl_no_error": true,
+    "no_runtime_errors": true,
+    "no_network_requests": true
+  },
+  "errors": [],
+  "requests": [],
+  "initial": {
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "gpuSimulation": true,
+    "quality": "Lite",
+    "resolution": [
+      770,
+      546
+    ],
+    "triangles": 155562,
+    "time": 0.2511000000000002,
+    "jelly": [
+      0,
+      0
+    ],
+    "camera": [
+      0.7,
+      0.92,
+      16.8
+    ],
+    "waveMaximum": 0,
+    "readError": 0
+  },
+  "after_splash": {
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "gpuSimulation": true,
+    "quality": "Lite",
+    "resolution": [
+      770,
+      546
+    ],
+    "triangles": 155562,
+    "time": 0.5678000000000001,
+    "jelly": [
+      0,
+      0
+    ],
+    "camera": [
+      0.7,
+      0.92,
+      16.8
+    ],
+    "waveMaximum": 0.04559326171875,
+    "readError": 0
+  },
+  "final": {
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "gpuSimulation": true,
+    "quality": "Lite",
+    "resolution": [
+      770,
+      546
+    ],
+    "triangles": 155562,
+    "time": 0.5334999999999982,
+    "jelly": [
+      0,
+      0
+    ],
+    "camera": [
+      0.694659176029964,
+      0.9157289130222469,
+      16.79179429546408
+    ],
+    "waveMaximum": 0,
+    "readError": 0
+  },
+  "passed": true
+}

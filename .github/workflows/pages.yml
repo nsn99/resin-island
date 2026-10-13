@@ -1,0 +1,55 @@
+name: Publish interactive island to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Prepare static site
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p _site
+          cp portable/Interactive_Island.html _site/index.html
+          cp portable/Interactive_Island.html _site/404.html
+          touch _site/.nojekyll
+          test -s _site/index.html
+          grep -q '<canvas' _site/index.html
+          grep -q 'WebGL' _site/index.html
+          echo "Static release prepared: $(wc -c < _site/index.html) bytes"
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy site
+        id: deployment
+        uses: actions/deploy-pages@v4
