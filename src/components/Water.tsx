@@ -9,13 +9,14 @@ import type { JellyUniforms } from '../lib/materials';
 import type { useHeightField } from '../hooks/useHeightField';
 import type { Settings } from '../standalone/engine';
 type Field=ReturnType<typeof useHeightField>;
+type BeforeCompile=(shader:THREE.WebGLProgramParametersWithUniforms,renderer:THREE.WebGLRenderer)=>void;
 
 function WaterMaterial({surface,buffer,field,jelly,settings,quality}:{surface:boolean;buffer:THREE.Texture;field:Field;jelly:JellyUniforms;settings:Settings;quality:number}){
  const ref=useRef<ComponentRef<typeof MeshTransmissionMaterial>>(null);
  useLayoutEffect(()=>{
   const material=ref.current;if(!material)return;
   // Preserve Drei's transmission implementation, then append our displacement.
-  const original=material.onBeforeCompile.bind(material);
+  const original=(material.onBeforeCompile as BeforeCompile).bind(material);
   material.onBeforeCompile=(shader,renderer)=>{
    original(shader,renderer);
    Object.assign(shader.uniforms,field.uniforms,{uJelly:jelly.uJelly,uTerrain:{value:field.terrain}});
